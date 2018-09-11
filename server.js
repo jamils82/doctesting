@@ -15,6 +15,14 @@ res.sendFile(path.join(__dirname+'<name-of-app>/src/index.html'));
 app.listen(process.env.PORT || 5000 , function () {
     console.log(process.env.PORT || 5000);
 } );
+  
+app.use(function (req, res, next) {        
+    res.setHeader('Access-Control-Allow-Origin', 'https://doctesting.herokuapp.com/');    
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');    
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');      
+    res.setHeader('Access-Control-Allow-Credentials', true);       
+    next();  
+});  
 /*var http = require('http');
 
 //create a server object:
