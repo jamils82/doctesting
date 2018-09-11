@@ -47,10 +47,10 @@
     }
     .maindiv {
         background: #e6e6e6;
-        width: 50%;
+        width: 40%;
         margin: 0 auto;
         margin-top: 10%;
-        height: 50vh;
+        height: 60vh;
         text-align: center;  
         border-radius: 10px;
     }
@@ -61,7 +61,7 @@
       display: none;   
      }
      html, body { height: 100%; width: 100%; margin: 0; }
-     
+    
      input {
        line-height: 4px;
        height: 20%;

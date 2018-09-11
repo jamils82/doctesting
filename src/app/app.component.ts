@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { OpentokService } from './opentok.service';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 
 import * as OT from '@opentok/client';
@@ -40,21 +39,6 @@ export class AppComponent implements OnInit {
     sessionId = '2_MX40NjE1MjQ1Mn5-MTUzNDUyNzk5MTY0NH5zenRtcm50WlpLSE4wNWtTQVZuUXYrSkZ-UH4';
   constructor(private ref: ChangeDetectorRef, private opentokService: OpentokService, private http: HttpClient) {
     this.changeDetectorRef = ref;
-  }
-  getAllCats(): Observable<Cat[] > {
-    return this.http.get<Cat[]>('http://localhost:8000/api/cats');
-  }
-  getCat(): Observable<Cat> {
-    return this.http.get<Cat>('http://localhost:8000/api/cat/' );
-  }
-  insertCat(sessionId): Observable<Cat> {
-    return this.http.post<Cat>('http://localhost:8000/api/cats/', sessionId);
-  }
-  updateCat(cat: Cat): Observable<void> {
-    return this.http.put<void>('http://localhost:8000/api/cats/' + cat.name, cat);
-  }
-  deleteCat(name: string) {
-    return this.http.delete('http://localhost:8000/api/cats/' + name);
   }
 
   ngOnInit () {
