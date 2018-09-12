@@ -13,17 +13,16 @@ res.sendFile(path.join(__dirname, '/src' + '/index.html'));
 
 app.get('/', function(req,res) {
     
+res.sendFile(path.join(__dirname, '/src' + '/index.html'));
+});
+app.get('', function(req,res) {
+    
     res.sendFile(path.join(__dirname, '/src' + '/index.html'));
     });
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 5000 , function () {
     console.log(process.env.PORT || 5000);
 } );
-
-app.get('', function(req,res) {
-    
-    res.sendFile(path.join(__dirname, '/src' + '/index.html'));
-    });
 /*var http = require('http');
 
 //create a server object:
